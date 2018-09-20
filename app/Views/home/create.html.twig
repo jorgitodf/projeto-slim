@@ -1,0 +1,31 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block content %}
+
+    <h2>Cadastro - Sistema de Validação</h2><hr>
+
+    <form action="/cadastro" method="post">
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" name="name" class="form-control" value="{{ dados.name }}">
+            {{ message('name') | raw }}
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" class="form-control" value="{{ dados.email }}">
+            {{ message('email') | raw }}
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="text" name="phone" class="form-control" value="{{ dados.phone }}">
+            {{ message('phone') | raw }}
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Cadastrar">
+        </div>
+    </form>
+
+{% endblock %} 
