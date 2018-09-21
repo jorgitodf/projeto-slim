@@ -35,3 +35,9 @@ function back()
     Redirect::back();
     die();
 }
+
+function redirect($target)
+{
+    Redirect::redirect($target);
+    die();
+}

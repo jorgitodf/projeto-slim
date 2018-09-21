@@ -2,22 +2,29 @@
 
 {% block content %}
 
-    <h2>Home</h2>
-
-    <button id="btn_subscribe" class="btn">Subscribe</button>
+    <h2>Lista de Usuários</h2>
 
     <table class="table table-striped">
-        <tr>
-            <td>Titulo</td>
-            <td>Descrição</td>
-        </tr>    
-
-        {% for post in posts %}
+        <thead>
             <tr>
-                <td>{{ post.title }}</td>
-                <td>{{ post.description }}</td>
-            </tr>    
+                <td>Nome</td>
+                <td>E-mail</td>
+                <td>Telefone</td>
+                <td colspan="2">Ações</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+                <td><a href="/editar/{{ user.id }}" class="btn btn-success btn-xs">Editar</a></td>
+                <td><a href="/deletar/{{ user.id }}" class="btn btn-danger btn-xs">Apagar</a></td>
+            </tr>
         {% endfor %}
-    </table>    
+        </tbody>
+    </table>
+    <p>{{ message('message') | raw }}</p>
 
 {% endblock %}

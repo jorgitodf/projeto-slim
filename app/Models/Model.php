@@ -3,12 +3,18 @@
 namespace App\Models;
 
 use App\Src\Connection;
-use App\Models\Posts;
-use App\Models\Users;
+use App\Traits\Create;
+use App\Traits\Read;
+use App\Traits\Update;
+use App\Traits\Delete;
 
 class Model
 {
+    use Create, Read, Update, Delete;
+
     protected $connect;
+    protected $field;
+    protected $value;
 
     public function __construct()
     {
@@ -25,11 +31,18 @@ class Model
 
     public function find($field, $value) 
     {
-		$sql = "SELECT * FROM {$this->table} WHERE {$field} = :{$field}";
-		$find = $this->connect->prepare($sql);
-		$find->bindValue($field, $value);
-		$find->execute();
+		$this->field = $field;
+		$this->value = $value;
 
-		return $find->fetch();
+		return $this;
 	}
+
+    public function destroy($field,$value){
+        $sql = "DELETE FROM {$this->table} WHERE {$field} = :{$field}";
+        $delete = $this->connect->prepare($sql);
+        $delete->bindValue($field,$value);
+        $delete->execute();
+
+        return $delete->rowCount();
+    }
 }

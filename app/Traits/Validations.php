@@ -32,7 +32,7 @@ trait Validations
 
 		$model = new $model();
 
-		$find = $model->find($field, $_POST[$field]);
+		$find = $model->select()->where($field, $_POST[$field])->first();
 
 		if ($find && !empty($_POST[$field])) {
 			$this->errors[$field][] = flash($field, error('O E-mail informado já está cadastrado!'));

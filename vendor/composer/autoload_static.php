@@ -14,6 +14,10 @@ class ComposerStaticInitac91ab9c1bdc46b312339ddd0c7eb600
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Whoops\\' => 7,
+        ),
         'T' => 
         array (
             'Twig\\' => 5,
@@ -26,6 +30,7 @@ class ComposerStaticInitac91ab9c1bdc46b312339ddd0c7eb600
         ),
         'P' => 
         array (
+            'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
         ),
@@ -37,6 +42,10 @@ class ComposerStaticInitac91ab9c1bdc46b312339ddd0c7eb600
         array (
             'FastRoute\\' => 10,
         ),
+        'D' => 
+        array (
+            'Dopesong\\Slim\\Error\\' => 20,
+        ),
         'A' => 
         array (
             'App\\Src\\' => 8,
@@ -45,6 +54,10 @@ class ComposerStaticInitac91ab9c1bdc46b312339ddd0c7eb600
     );
 
     public static $prefixDirsPsr4 = array (
+        'Whoops\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/filp/whoops/src/Whoops',
+        ),
         'Twig\\' => 
         array (
             0 => __DIR__ . '/..' . '/twig/twig/src',
@@ -61,6 +74,10 @@ class ComposerStaticInitac91ab9c1bdc46b312339ddd0c7eb600
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
         ),
+        'Psr\\Log\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
+        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -76,6 +93,10 @@ class ComposerStaticInitac91ab9c1bdc46b312339ddd0c7eb600
         'FastRoute\\' => 
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
+        ),
+        'Dopesong\\Slim\\Error\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/dopesong/slim-whoops/src',
         ),
         'App\\Src\\' => 
         array (

@@ -1,0 +1,34 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block content %}
+
+    <h2>Edição de Usuário</h2><hr>
+
+    <form action="/update" method="POST">
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" name="name" class="form-control" value="{{ user.name }}">
+            <input type="hidden" name="id" class="form-control" value="{{ user.id }}">
+            {{ message('name') | raw }}
+        </div>
+
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input type="email" name="email" class="form-control" value="{{ user.email }}">
+            {{ message('email') | raw }}
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Telefone</label>
+            <input type="text" name="phone" class="form-control" value="{{ user.phone }}">
+            {{ message('phone') | raw }}
+        </div>
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Salvar">
+        </div>
+
+        <p>{{ message('message') | raw }} </p>
+    </form>
+
+{% endblock %}
