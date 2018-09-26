@@ -8,13 +8,14 @@ use App\Traits\Read;
 use App\Traits\Update;
 use App\Traits\Delete;
 
-class Model
+abstract class Model
 {
     use Create, Read, Update, Delete;
 
     protected $connect;
     protected $field;
     protected $value;
+    protected $sql;
 
     public function __construct()
     {

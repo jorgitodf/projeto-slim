@@ -41,3 +41,8 @@ function redirect($target)
     Redirect::redirect($target);
     die();
 }
+
+function busca()
+{
+    return filter_input(INPUT_GET, 's', FILTER_SANITIZE_STRING);
+}

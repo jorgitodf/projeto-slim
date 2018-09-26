@@ -22,8 +22,10 @@ class HomeController extends Controller
 
     public function index()
     {
-        $users = $this->user->select()->get();
-        $this->view('home/index', ['users' => $users, 'title' => 'Página Home']);
+        //$users = $this->user->select()->get();
+        $users = $this->user->select()->busca('name,email')->paginate(2)->get();
+
+        $this->view('home/index', ['users' => $users, 'title' => 'Página Home' /*, 'links' => $user->links() */]);
     }
 
     public function store()

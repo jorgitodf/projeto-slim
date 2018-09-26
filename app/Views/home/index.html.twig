@@ -4,13 +4,18 @@
 
     <h2>Lista de Usuários</h2>
 
+    <form action="">
+        <input type="text" name="s" class="form-control" placeholder="Buscar Usuário">
+    </form><br/>
+
     <table class="table table-striped">
         <thead>
             <tr>
                 <td>Nome</td>
                 <td>E-mail</td>
                 <td>Telefone</td>
-                <td colspan="2">Ações</td>
+                <td></td>
+                <td>Ações</td>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +29,12 @@
             </tr>
         {% endfor %}
         </tbody>
+
+        <tfoot>
+            <tr>
+                <td>{{ links | raw }}</td>
+            </tr>
+        </tfoot> 
     </table>
     <p>{{ message('message') | raw }}</p>
 
