@@ -19,5 +19,7 @@ $app->post('/cadastro', 'App\Controllers\HomeController:create');
 $app->get('/editar/{id}', 'App\Controllers\HomeController:edit');
 $app->post('/update', 'App\Controllers\HomeController:update');
 $app->get('/deletar/{id}', 'App\Controllers\HomeController:delete');
+$app->get('/contato', 'App\Controllers\ContatoController:index');
+$app->post('/contato/store', 'App\Controllers\ContatoController:store');
 
 $app->run();

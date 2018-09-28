@@ -1,0 +1,36 @@
+{% extends 'layouts/layout.html.twig' %}
+
+{% block content %}
+
+<h2>Contato</h2> <hr>
+
+<form action="/contato/store" method="post">
+    <div class="form-group">
+        <label for="name">Nome</label>
+        <input type="text" name="name" class="form-control">
+        {{ message('name') | raw }}
+    </div>
+
+    <div class="form-group">
+        <label for="email">E-mail</label>
+        <input type="text" name="email" class="form-control">
+        {{ message('email') | raw }}
+    </div>
+
+    <div class="form-group">
+        <label for="assunto">Assunto</label>
+        <input type="text" name="assunto" class="form-control">
+        {{ message('assunto') | raw }}
+    </div>
+
+    <div class="form-group">
+        <label for="assunto">Mensagem</label>
+        <textarea name="mensagem" rows="6" style="width:100%;"></textarea>
+        {{ message('mensagem') | raw }}
+    </div>
+
+    <button type="submit" class="btn btn-success"> Enviar</button>
+
+</form>
+
+{% endblock %}
